@@ -6,11 +6,12 @@ makeCacheMatrix <- function(x = matrix()) {
     }
     get<-function() x
     setsolve<-function(solve) a<<- solve
-    getmatrix<-function() a
-    list(set=set, get=get,setsolve=setsolve,getmatrix=getmatrix)
+    getsolve<-function() a
+    list(set=set, get=get,setsolve=setsolve,getsolve=getsolve)
 }
+
 cacheSolve <- function(x=matrix(), ...) {
-    a<-x$getmatrix()
+    a<-x$getsolve()
     if(!is.null(a)){
         message("getting cached data")
         return(a)
